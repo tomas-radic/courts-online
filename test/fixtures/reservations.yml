@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  res_date: 2014-04-13
+  time_slot: 1
+  court_nr: 1
+  player_id: 1
+
+two:
+  res_date: 2014-04-13
+  time_slot: 1
+  court_nr: 1
+  player_id: 1

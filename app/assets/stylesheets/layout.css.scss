@@ -1,0 +1,109 @@
+
+body {
+  font-family: arial, sans-serif;
+  background-color: darken(#fff, 15);
+}
+
+.main-banner {
+  height: 300px;
+  margin-bottom: 16px;
+  background: url("main-banner.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: height 0.4s; /* For Safari 3.1 to 6.0 */
+  transition: height 0.4s;
+
+  #navigation {
+    padding: 20px;
+    
+
+    a {
+      background-color: rgba(218, 144, 94, 0.5);
+      color: darken(#fff, 15);
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid darken(#fff, 15);
+      border-radius: 2px;
+      text-decoration: none;
+      -webkit-transition: 0.1s ease-in;
+      letter-spacing: 1px;
+      
+      &:hover {
+        background-color: rgba(218, 124, 94, 0.3);
+      }
+    }
+  }
+
+
+  
+  h1 {
+    line-height: 116px;
+    color: #C05B2C;
+    font-size: 80px;
+    vertical-align: middle;  
+    text-shadow: 2px 2px 3px darken(#fff, 15);
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: center;
+    -webkit-transition: line-height 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: line-height 0.4s;
+
+  }
+
+/*  &:hover {
+    height: 500px;
+
+    h1 {
+      line-height: 338px;
+    }
+  }*/
+
+}
+
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+
+.input-form-section {
+  width: 760px;
+
+  label {
+    text-align: right;
+    font-style: italic;
+    color: rgb(25, 86, 143);
+    width: 250px;
+    padding: 8px;
+    display: inline-block;
+  }
+
+  textarea {
+    width: 100%;
+    height: 45px;
+  }
+
+  .submit-button {
+    width: 150px;
+    margin: 10px 0px;
+  }
+}
+
+
+
+#footer {
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #C05B2C;
+  margin-top: 20px;
+  border-top: 1px solid black;
+
+  a {
+    color: darken(#fff, 15);
+  }
+}
+

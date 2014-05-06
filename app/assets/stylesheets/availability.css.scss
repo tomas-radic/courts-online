@@ -1,0 +1,87 @@
+// Place all the styles related to the availability controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-reservation {
+  margin: 10px 0;
+  width: 800px;
+  cursor: pointer;
+  cursor: hand;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+
+  h4 {
+    background-color: #d9d9d9;
+    text-decoration: underline;
+    color: darkblue;
+    padding: 10px;
+    margin: 0;
+  }
+
+  div {
+    display: none;
+    padding: 7px;
+    width: 200px;
+
+    .reservation-control {
+      float: right;
+    }
+
+    .reserve-button {
+      margin: 0 auto;
+    }
+    a {
+      border: 1px solid grey;
+      border-radius: 4px;
+      padding: 5px 10px;
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+    p:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.courts-reservations {
+
+  font-family: "Lucida Console", sans-serif;
+  font-size: 12px;
+  font-style: oblique;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 14px 0px;
+  width: 800px;
+
+  th, td {
+    width: 20%;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    padding: 3px;
+  }
+
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+  th:last-child, td:last-child {
+    border-right: none;
+  }
+
+  td.occupied {
+    background-color: #C05B2C;
+    color: white;
+  }
+
+  td.available {
+    background-color: #95FF9D;
+  }
+
+  tr:nth-child(even) td {
+    border-bottom: 1px dotted #222;
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CourtsOnline</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="main-banner">
+    <div id='navigation'>
+      <%= link_to "Rezervácie", availability_path %>
+      <%= link_to "Klienti", players_path %>
+      <%= link_to "Kontakt", "#" %>
+    </div>
+    <h1>Kurty-Online.sk</h1>
+  </div>
+  <div class='container'>
+    <%= yield %>
+    <div id="footer">
+      <%= link_to "www.kurty-online.sk", availability_path %>
+    </div><!-- footer (end) -->
+  </div>
+</body>
+</html>

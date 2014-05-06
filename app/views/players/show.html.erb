@@ -1,0 +1,8 @@
+<div class="player-details">
+  <div class="input-form-section">
+    <%= label_tag("fullname", "meno", class: "player-detail-label") %>
+    <%= label_tag('player-name', "#{@player.firstname} #{@player.lastname} #{@player.name_suffix}") %>
+    <br/>
+    <%= link_to "Zrušiť", players_path %>
+  </div>
+</div>

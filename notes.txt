@@ -1,0 +1,8 @@
+
+TODOs
+-------------
+Teraz:
+- pri rezervacii dropdown -> vybrat hraca
+
+-------------
+Neskor:

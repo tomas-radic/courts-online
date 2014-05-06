@@ -1,0 +1,13 @@
+<%= form_for @player do |p| %>
+  <div class="input-form-section">
+    <%= p.hidden_field :id, id: "player-id" %>
+    <%= p.label :firstname, "meno" %>
+    <%= p.text_field :firstname %><br/>
+    <%= p.label :lastname, "priezvisko" %>
+    <%= p.text_field :lastname %><br/>
+    <%= p.label :name_suffix, "za menom (napr. 'ml.')" %>
+    <%= p.text_field :name_suffix %><br/>
+    <%= submit_tag "Uložiť", class: "submit-button" %>
+    <%= link_to "Zrušiť", players_path %>
+  </div>
+<% end %>
