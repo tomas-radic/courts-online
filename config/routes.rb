@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/availability' => 'availability#index', as: :availability
 
   resources :players
+  resources :reservations
   root to: "availability#index"
   
   # The priority is based upon order of creation: first created -> highest priority.

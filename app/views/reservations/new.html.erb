@@ -1,0 +1,20 @@
+<h2>Nová rezervácia</h2>
+
+<%= form_for @reservation do |r| %>
+  <div class="input-form-section">
+    <%= r.label :player_id, "Klient" %>
+    <%= r.select :player_id, options_for_select(Player.order(created_at: :desc).map { |p| [p.fullname, p.id] }), { include_blank: false } %><br/>
+    
+    <%= r.label :res_date, "Dátum" %>
+    <%= r.date_select :res_date, order: [:day, :month, :year] %><br/>
+    
+    <%= r.label :time_slot, "Čas začiatku" %>
+    <%= r.select :time_slot, @timesheet.map { |slot| [slot[1], slot[0]] }, { include_blank: false } %><br/>
+
+    <%= r.label :court_nr, "Kurt" %>
+    <%= r.text_field :court_nr %><br/>
+
+    <%= r.submit "Uložiť", class: "submit-button" %>
+    <%= link_to "Zrušiť", players_path %>
+  </div>
+<% end %>
