@@ -1,7 +1,7 @@
 <p>
-  <%= link_to(player.fullname, player) %><br/>
-  <%= link_to("(Upraviť)", edit_player_path(player.id)) %>
+  <%= link_to(player.fullname, player) %>
+  (<%= link_to("Upraviť", edit_player_path(player.id)) %>)
   /
-  <%= link_to("(Vymazať)", player_path(player.id), method: 'delete', data: { confirm: 'Naozaj vymazat?' }) %>
+  (<%= link_to("Vymazať", player_path(player.id), method: 'delete', data: { confirm: 'Naozaj vymazat?' }) %>)
 </p>
 <hr/>

@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  Rails.application.routes.draw do
-    get '/availability' => 'availability#index', as: :availability
-  end
-  
+  get '/availability' => 'availability#index', as: :availability
+
   resources :players
   root to: "availability#index"
   

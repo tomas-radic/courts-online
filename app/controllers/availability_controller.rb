@@ -1,7 +1,7 @@
 class AvailabilityController < ApplicationController
   def index
     @courts_cnt = 4
-    @sel_date = '2014-05-01'
+    @sel_date = '2014-05-08'
     @timesheet = [
       [800, '8:00 - 8:30'],
       [830, '8:30 - 9:00'],
