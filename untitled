@@ -1,14 +1,4 @@
 
-<script>
-  $(document).ready(function() {
-    $("#new-reservation h4").click(function() {
-      $("#new-reservation div").slideToggle();
-    });
-  });
-</script>
-
-
-
 <%= date_select("selected-date", "sel-date", order: [:day, :month, :year]) %>
 <%= link_to "Potvrdiť", "#", id: "confirm-date" %>
 <div id="new-reservation">
@@ -31,26 +21,3 @@
     </p>
   </div>
 </div>
-<table class="courts-reservations">
-  <thead>
-    <tr>
-      <th>Cas</th>
-      <% @courts_cnt.times do |court_nr| %>
-        <th>Kurt <%= court_nr + 1 %></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @timesheet.each do |ts_id, ts_title| %>
-      <tr>
-        <td class="timeslot-column"><%= ts_title %></td>
-        
-        <% @courts_cnt.times do |court_nr| %>
-          <td class=<%= get_cell_class(@sel_date, ts_id, court_nr + 1) %> >
-            <%= get_player_name_for_reservation(@sel_date, ts_id, court_nr + 1) %>
-          </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

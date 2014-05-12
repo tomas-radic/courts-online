@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :load_timesheet
+  before_action :load_data
 
   def index
     @courts_cnt = 4
@@ -19,10 +19,29 @@ class ReservationsController < ApplicationController
     redirect_to reservations_url
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
 
+  def update
+    @reservation = Reservation.find params[:id]
+    @reservation.update reservation_params  
+
+    redirect_to(reservations_url)
+  end
+
+  def destroy
+    reservation = Reservation.find(params[:id])
+    reservation.destroy
+    
+    redirect_to(reservations_url)
+  end
+
+
+  # private members -------------------------
   private
 
-  def load_timesheet
+  def load_data
     @timesheet = [
       [800, '8:00 - 8:30'],
       [830, '8:30 - 9:00'],
@@ -53,6 +72,9 @@ class ReservationsController < ApplicationController
       [2100, '21:00 - 21:30'],
       [2130, '21:30 - 22:00']
     ]
+
+    @court_numbers = [ 1, 2, 3, 4 ]
+    
   end
 
   def reservation_params 

@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
   # Actions -------------------------------
   # index/show
   def index
-    @players = Player.order(created_at: :desc)
+    @players = Player.order(:lastname, :firstname, :name_suffix)
   end
 
   def show
@@ -16,11 +16,7 @@ class PlayersController < ApplicationController
   end
 
   def create
-    new_player = Player.new(params[:player].permit(
-      :firstname,
-      :lastname,
-      :name_suffix
-    ))
+    new_player = Player.new player_params
 
     new_player.save
     redirect_to players_url
@@ -34,11 +30,7 @@ class PlayersController < ApplicationController
 
   def update
     @player = Player.find params[:id]
-    @player.update params[:player].permit(
-      :firstname,
-      :lastname,
-      :name_suffix
-    )  
+    @player.update player_params
 
     redirect_to(players_url)
   end
@@ -50,5 +42,18 @@ class PlayersController < ApplicationController
     redirect_to(players_url)
   end
   # Actions ------------------------------- (end)
+
+
+  # Private members ---------------
+  private
+
+  def player_params
+    params.require(:player).permit(
+      :firstname,
+      :lastname,
+      :name_suffix
+    )
+  end
+
 
 end

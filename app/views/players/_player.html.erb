@@ -1,7 +1,6 @@
-<p>
-  <%= link_to(player.fullname, player) %>
-  (<%= link_to("Upraviť", edit_player_path(player.id)) %>)
-  /
-  (<%= link_to("Vymazať", player_path(player.id), method: 'delete', data: { confirm: 'Naozaj vymazat?' }) %>)
-</p>
-<hr/>
+<tr>
+  <td>
+    <%= link_to(player.fullname, edit_player_path(player.id)) %>
+    <%= link_to(image_tag("delete.png"), player_path(player.id), method: 'delete', data: { confirm: 'Naozaj vymazat?' }, class: "delete-record") %>
+  </td>
+</tr>

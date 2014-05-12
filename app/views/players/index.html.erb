@@ -1,5 +1,8 @@
 <h2>Zoznam klientov</h2>
-<%= render partial: "player", collection: @players %>
-<div>
-  <%= link_to "Pridať hráča", new_player_path, class: "edit-pyramid-link" %>
+<table>
+  <%= render partial: "player", collection: @players %>
+</table>
+<div class="button-link">
+  <%= link_to "Vymazať...", "javascript:toggleEditMode('Vymazať...')", id: "edit-records" %>
+  <%= link_to "Pridať klienta", new_player_path %>
 </div>

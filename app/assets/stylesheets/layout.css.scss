@@ -52,6 +52,7 @@ body {
 
   }
 
+
 /*  &:hover {
     height: 500px;
 
@@ -62,6 +63,42 @@ body {
 
 }
 
+
+h2 {
+  color: black;
+  font-size: 30px;
+  padding: 14px 0;
+  margin-top: 12px;
+}
+
+.button-link {
+
+  a {
+    width: 200px;
+    padding: 5px;
+    background-color: #C05B2C;
+    color: darken(#fff, 15);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+    margin-bottom: 20px;
+    border-left: 1px solid darken(#fff, 15);
+    
+
+
+    &:hover {
+      color: darken(#fff, 15);
+    }
+  }
+}
+
+.button-link:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .container {
   width: 1170px;
@@ -86,10 +123,15 @@ body {
     height: 45px;
   }
 
-  .submit-button {
+  .link-button {
     width: 150px;
     margin: 10px 0px;
   }
+}
+
+
+.delete-record {
+  display: none;
 }
 
 

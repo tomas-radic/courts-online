@@ -1,11 +1,11 @@
 <%= link_to "Návrat", reservations_path %>
 
-<h2>Nová rezervácia</h2>
+<h2>Upraviť rezerváciu</h2>
 
 <%= form_for @reservation do |r| %>
   <div class="input-form-section">
     <%= r.label :player_id, "Klient" %>
-    <%= r.select :player_id, Player.order(:lastname, :firstname, :name_suffix).map { |p| [p.fullname, p.id] }, { include_blank: true } %><br/>
+    <%= r.select :player_id, Player.order(:lastname, :firstname, :name_suffix).map { |p| [p.fullname, p.id] }, { include_blank: false } %><br/>
     
     <%= r.label :res_date, "Dátum" %>
     <%= r.date_select :res_date, order: [:day, :month, :year] %><br/>

@@ -1,36 +1,44 @@
 
-<script>
+<!--<script>
   $(document).ready(function() {
     $("#new-reservation h4").click(function() {
       $("#new-reservation div").slideToggle();
     });
   });
-</script>
+</script>-->
 
 
-<p><%= link_to "Zarezervovať", new_reservation_path %></p>
 
-
-<table class="courts-reservations">
-  <thead>
-    <tr>
-      <th>Cas</th>
-      <% @courts_cnt.times do |court_nr| %>
-        <th>Kurt <%= court_nr + 1 %></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @timesheet.each do |ts_id, ts_title| %>
+<div class="courts-reservations">
+  <h4>Dátum: <i><%= @sel_date %></i></h4>
+  <div class="button-link">
+    <%= link_to "Upraviť rezervácie", "javascript:toggleEditMode('Upraviť rezervácie')", id: "edit-records" %>
+    <%= link_to "Nová rezervácia", new_reservation_path %>
+  </div>
+  <table>
+    <thead>
       <tr>
-        <td class="timeslot-column"><%= ts_title %></td>
-        
+        <th>Cas</th>
         <% @courts_cnt.times do |court_nr| %>
-          <td class=<%= get_cell_class(@sel_date, ts_id, court_nr + 1) %> >
-            <%= get_player_name_for_reservation(@sel_date, ts_id, court_nr + 1) %>
-          </td>
+          <th>Kurt <%= court_nr + 1 %></th>
         <% end %>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @timesheet.each do |ts_id, ts_title| %>
+        <tr>
+          <td class="timeslot-column"><%= ts_title %></td>
+          
+          <% @courts_cnt.times do |court_nr| %>
+            <td class=<%= get_cell_class(@sel_date, ts_id, court_nr + 1) %> >
+              <%= link_to(get_reservation_player_name(@sel_date, ts_id, court_nr + 1), edit_reservation_path(get_reservation_id(@sel_date, ts_id, court_nr + 1))) %>
+              <% if get_reservation_id(@sel_date, ts_id, court_nr + 1) > 0 %>
+                <%= link_to(image_tag("delete.png"), reservation_path(get_reservation_id(@sel_date, ts_id, court_nr + 1)), method: "delete", data: { confirm: "Naozaj vymazať?" }, class: "delete-record") %>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
