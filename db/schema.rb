@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508145833) do
+ActiveRecord::Schema.define(version: 20140513155655) do
 
   create_table "players", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "name_suffix"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reservation_statuses", force: true do |t|
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140508145833) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "slots_count"
+    t.integer  "reservation_status_id", default: 0
   end
 
 end

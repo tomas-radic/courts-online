@@ -16,6 +16,9 @@
     <%= r.label :court_nr, "Kurt" %>
     <%= r.select :court_nr, @court_numbers %><br/>
 
+    <%= r.label :reservation_status_id, "Stav rezervácie" %>
+    <%= r.select :reservation_status_id, @reservation_statuses.map { |rs| [rs.status, rs.id] }, { include_blank: false } %><br/>
+
     <%= r.submit "Uložiť", class: "link-button" %>
     <%= link_to "Zrušiť", reservations_path %>
   </div>

@@ -28,7 +28,12 @@ module ApplicationHelper
     r = Reservation.where(res_date: res_date, time_slot: time_slot_id, court_nr: court_nr).first
     
     if r
-      class_name = r.player.lastname.length > 0 ? "occupied" : "available"
+      case r.reservation_status_id
+      when 1
+        class_name = "requested"
+      when 2
+        class_name = "occupied"
+      end
     end
 
     return class_name

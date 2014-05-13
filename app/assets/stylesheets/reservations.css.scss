@@ -86,11 +86,19 @@
 
   td.occupied {
     background-color: #C05B2C;
-    color: white;
+    a {
+      color: white;
+    }
   }
 
   td.available {
     background-color: #95FF9D;
+  }
+  td.requested {
+    background-color: #E7ED32;
+    a {
+      color: red;
+    }
   }
 
   tr:nth-child(even) td {

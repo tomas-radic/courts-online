@@ -14,9 +14,11 @@ class ReservationsController < ApplicationController
 
   def create 
     @reservation = Reservation.new reservation_params
-    @reservation.save
-
-    redirect_to reservations_url
+    if @reservation.save
+      redirect_to reservations_url
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,9 +27,11 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find params[:id]
-    @reservation.update reservation_params  
-
-    redirect_to(reservations_url)
+    if @reservation.update reservation_params  
+      redirect_to(reservations_url)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -74,6 +78,8 @@ class ReservationsController < ApplicationController
     ]
 
     @court_numbers = [ 1, 2, 3, 4 ]
+
+    @reservation_statuses = ReservationStatus.all
     
   end
 
@@ -82,7 +88,8 @@ class ReservationsController < ApplicationController
       :player_id,
       :res_date,
       :time_slot,
-      :court_nr
+      :court_nr,
+      :reservation_status_id
     )
   end
 

@@ -8,11 +8,12 @@
 </script>-->
 
 
-
+<h2>Rezervácie</h2>
+<hr/>
 <div class="courts-reservations">
   <h4>Dátum: <i><%= @sel_date %></i></h4>
   <div class="button-link">
-    <%= link_to "Upraviť rezervácie", "javascript:toggleEditMode('Upraviť rezervácie')", id: "edit-records" %>
+    <%= link_to "Vymazať rezervácie...", "javascript:toggleEditMode('Vymazať rezervácie...')", id: "edit-records" %>
     <%= link_to "Nová rezervácia", new_reservation_path %>
   </div>
   <table>

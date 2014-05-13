@@ -2,6 +2,14 @@
 
 <h2>Nová rezervácia</h2>
 
+<% if @reservation.errors.any? %>
+  <ul class='errors'>
+    <% @reservation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @reservation do |r| %>
   <div class="input-form-section">
     <%= r.label :player_id, "Klient" %>
@@ -15,6 +23,9 @@
 
     <%= r.label :court_nr, "Kurt" %>
     <%= r.select :court_nr, @court_numbers %><br/>
+
+    <%= r.label :reservation_status_id, "Stav rezervácie" %>
+    <%= r.select :reservation_status_id, @reservation_statuses.map { |rs| [rs.status, rs.id] }, { include_blank: false } %><br/>
 
     <%= r.submit "Uložiť", class: "link-button" %>
     <%= link_to "Zrušiť", reservations_path %>
